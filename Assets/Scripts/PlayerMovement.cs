@@ -73,6 +73,16 @@ public class PlayerMovement : MonoBehaviour
         anim.SetInteger("state", (int)state);
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy Head"))
+        {
+            Destroy(collision.transform.parent.gameObject);
+            jumpSoundEffect.Play();
+            rb.velocity = new Vector2(rb.velocity.x, jumpHeight);
+        }
+    }
+
     private bool OnGround()
     {
         return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.down, .1f, jumpableGround); // skapar en box som är lika stor som hitboxen runt spelaren, och kontrollerar ifall Player rör marken
