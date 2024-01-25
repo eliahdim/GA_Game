@@ -11268,5 +11268,9 @@ PrefabInstance:
       propertyPath: melonsText
       value: 
       objectReference: {fileID: 1105009299}
+    - target: {fileID: 8805467298442315602, guid: 12a9573ddcfcfe94ca9c27af9d67d609, type: 3}
+      propertyPath: melonsText
+      value: 
+      objectReference: {fileID: 1105009299}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12a9573ddcfcfe94ca9c27af9d67d609, type: 3}
