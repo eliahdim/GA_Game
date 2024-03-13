@@ -13,27 +13,26 @@ public class ItemCollector : MonoBehaviour
 
     [SerializeField] private AudioSource collectSoundEffect;
 
-    // infoga jumpHeight
+   
     public PlayerMovement playerMovement;
     void Start()
     {
-        // Tilldela referensen till PlayerMovement-skriptet
         playerMovement = FindObjectOfType<PlayerMovement>();
     }
     void Update()
     {
         float playerJumpHeight = playerMovement.jumpHeight;
     }
-    // jumpHeight slut
+   
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.CompareTag("Melon"))
+        if(collision.gameObject.CompareTag("Melon")) // when Player touches Melon, execute the following
         {
-            collectSoundEffect.Play();
-            Destroy(collision.gameObject);
-            melons++;
-            melonsText.text = "Melons: " + melons;
+            collectSoundEffect.Play(); // play sound effect
+            Destroy(collision.gameObject); // destroy Melon object
+            melons++; // add 1 to melon counter
+            melonsText.text = "Melons: " + melons; // text UI displaying amount of melons collected
         }
 
         if (collision.gameObject.CompareTag("Kiwi"))

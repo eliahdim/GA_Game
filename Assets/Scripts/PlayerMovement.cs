@@ -21,7 +21,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Start()
     {
-        rb = GetComponent<Rigidbody2D>(); // gör så att GetComponent inte behöver köras varje frame
+        rb = GetComponent<Rigidbody2D>();
         coll = GetComponent<BoxCollider2D>();
         sprite = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
@@ -30,13 +30,13 @@ public class PlayerMovement : MonoBehaviour
     
     private void Update()
     {
-        dirX = Input.GetAxisRaw("Horizontal"); // variabel dirX som tar in ifall Horizontal trycks (a, d, pil höger, pil vänster)
-        rb.velocity = new Vector2(dirX * walkingSpeed, rb.velocity.y); // multiplicera dirX med 7f så att vi kan röra oss åt båda håll
+        dirX = Input.GetAxisRaw("Horizontal"); // imports horizontal move controls
+        rb.velocity = new Vector2(dirX * walkingSpeed, rb.velocity.y); // allows Player to walk in both directions
 
-        if (Input.GetButtonDown("Jump") && OnGround()) // Om jump knappen (space) trycks och OnGround är "true", kör koden nedan
+        if (Input.GetButtonDown("Jump") && OnGround()) // checks if space is pressed and OnGround is "true"
         {
-            jumpSoundEffect.Play();
-            rb.velocity = new Vector2(rb.velocity.x, jumpHeight);  // rb.velocity.y och rb.velocity.x gör så att det går att hoppa och gå samtidigt
+            jumpSoundEffect.Play(); // play sound effect
+            rb.velocity = new Vector2(rb.velocity.x, jumpHeight);  // jump
         }
 
         UpdateAnimationState(); // gör koden mer organiserad
@@ -46,7 +46,7 @@ public class PlayerMovement : MonoBehaviour
     {
         MoveState state;
 
-        if (dirX > 0f) // kollar ifall Player står stilla eller rör på sig för att göra animationer
+        if (dirX > 0f) // checks if Player is idle or moving to execute different animations
         {
             state = MoveState.walking;
             sprite.flipX = true;
@@ -75,7 +75,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Enemy Head"))
+        if (collision.gameObject.CompareTag("Enemy Head")) // game logic for Rhino, if Player jumps on Rhino head then jump again, play sound effect and destroy Rhino object
         {
             Destroy(collision.transform.parent.gameObject);
             jumpSoundEffect.Play();
@@ -83,8 +83,8 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private bool OnGround()
+    private bool OnGround() // function to check if Player is on the ground
     {
-        return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.down, .1f, jumpableGround); // skapar en box som är lika stor som hitboxen runt spelaren, och kontrollerar ifall Player rör marken
+        return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.down, .1f, jumpableGround); // creates a box with the same size as Player and checks if Player touches ground
     }
 }

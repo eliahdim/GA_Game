@@ -6,7 +6,7 @@ public class StickyPlatform : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.name == "Player")
+        if (collision.gameObject.name == "Player") // when Player stands on moving platform, make player stick to the platform by becoming its child
         {
             collision.gameObject.transform.SetParent(transform);
         }
@@ -19,5 +19,5 @@ public class StickyPlatform : MonoBehaviour
             collision.gameObject.transform.SetParent(null);
         }
     }
-    // Player följer efter platformen genom att bli dess Child
+    
 }

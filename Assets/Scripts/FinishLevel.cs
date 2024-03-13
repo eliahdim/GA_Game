@@ -16,16 +16,16 @@ public class FinishLevel : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.name == "Player" && !levelCompleted)
+        if (collision.gameObject.name == "Player" && !levelCompleted) // when player collides with finish flag, play sound and load next level
         {
             finishSoundEffect.Play();
-            levelCompleted = true;
+            levelCompleted = true; 
             Invoke("CompleteLevel", 3f);
         }
     }
 
-    private void CompleteLevel() // kör nästa Level
+    private void CompleteLevel() // loads next level
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); 
     }
 }

@@ -8,6 +8,6 @@ public class CameraController : MonoBehaviour
 
     private void Update()
     {
-        transform.position = new Vector3(player.position.x, player.position.y, transform.position.z); // gör så att kameran följer spelarens x och y värde
+        transform.position = new Vector3(player.position.x, player.position.y, transform.position.z); // makes the camera follow the player's x and y value
     }
 }

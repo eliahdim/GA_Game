@@ -7,6 +7,6 @@ public class StartMenu : MonoBehaviour
 {
     public void StartGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); // går till nästa Scene (Level 1) när knappen trycks
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); // loads next Scene (Level 1) when button is pressed
     }
 }

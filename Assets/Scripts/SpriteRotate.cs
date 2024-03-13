@@ -8,6 +8,6 @@ public class SpriteRotate : MonoBehaviour
 
     private void Update()
     {
-        transform.Rotate(0, 0, 360 * rotationSpeed * Time.deltaTime);
+        transform.Rotate(0, 0, 360 * rotationSpeed * Time.deltaTime); // rotate object by the speed defined, rotationSpeed
     }
 }

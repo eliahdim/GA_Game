@@ -13,6 +13,6 @@ public class EndMenu : MonoBehaviour
     }
     public void Quit()
     {
-        Application.Quit(); // Quits game
+        Application.Quit(); // quits game
     }
 }
