@@ -39,7 +39,16 @@ public class PlayerMovement : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, jumpHeight);  // jump
         }
 
-        UpdateAnimationState(); // gör koden mer organiserad
+        UpdateAnimationState();
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Quit(); // calls function Quit when Escape is pressed 
+        }
+    }
+    public void Quit()
+    {
+        Application.Quit(); // quits game
     }
 
     private void UpdateAnimationState()
