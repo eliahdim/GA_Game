@@ -1148,7 +1148,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0.5938, y: 181}
-  m_SizeDelta: {x: 499.6245, y: 352.9994}
+  m_SizeDelta: {x: 900, y: 352.9994}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1200059166
 MonoBehaviour:
@@ -1183,7 +1183,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: POOTIS GAME
+  m_Text: POOTIS ADVENTURES
 --- !u!222 &1200059167
 CanvasRenderer:
   m_ObjectHideFlags: 0
