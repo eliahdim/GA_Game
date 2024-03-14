@@ -5,8 +5,8 @@ A 2D Platformer game with the objective of getting past all 4 levels to complete
 To start the game open "Pootis Adventures.exe"
 
 ## Controls:
-Jump: SPACE
-Move: A & D
+- Jump: SPACE
+- Move: A & D
 
 ### Credits
 - Game created by Pootis
