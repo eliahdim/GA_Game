@@ -1,7 +1,13 @@
-A game created by Pootis
+# Pootis Adventures
+A 2D Platformer game with the objective of getting past all 4 levels to complete the game. 
 
-To start game: Open "Pootis Adventures.exe"
+## How to start the game
+To start the game open "Pootis Adventures.exe"
 
-Controls:
+## Controls:
 Jump: SPACE
-Walk: A & D
+Move: A & D
+
+### Credits
+- Game created by Pootis
+- Graphics, SFX and music retrieved from Unity Asset Store
