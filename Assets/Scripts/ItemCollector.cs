@@ -35,20 +35,23 @@ public class ItemCollector : MonoBehaviour
             melonsText.text = "Melons: " + melons; // text UI displaying amount of melons collected
         }
 
-        if (collision.gameObject.CompareTag("Kiwi"))
+
+        // Kiwi item below not yet accesible in base game, might add later, only code for now
+
+        if (collision.gameObject.CompareTag("Kiwi")) // when Player touches Kiwi, execute the following
         {
-            collectSoundEffect.Play();
-            Destroy(collision.gameObject);
-            playerMovement.jumpHeight = playerMovement.jumpHeight * 1.3f;
-            GetComponent <SpriteRenderer>().color = Color.green;
-            StartCoroutine(ResetKiwi());
+            collectSoundEffect.Play(); // play sound effect
+            Destroy(collision.gameObject); // destroy Melon object
+            playerMovement.jumpHeight = playerMovement.jumpHeight * 1.3f; // make Player jump higher
+            GetComponent <SpriteRenderer>().color = Color.green; // make Player green
+            StartCoroutine(ResetKiwi()); // start function ResetKiwi, a countdown
         }
     }
 
     private IEnumerator ResetKiwi()
     {
-        yield return new WaitForSeconds(5);
-        playerMovement.jumpHeight = 13f;
-        GetComponent<SpriteRenderer>().color = Color.white;
+        yield return new WaitForSeconds(5); // wait 5 seconds
+        playerMovement.jumpHeight = 13f; // reset jumpHeight to normal
+        GetComponent<SpriteRenderer>().color = Color.white; // reset Player color
     }
 }
